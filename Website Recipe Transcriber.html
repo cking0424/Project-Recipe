@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="website.CSS" rel="Stylesheet">
+<body>
+    <header>
+        <h1>Transcribe Your Favorite Recipes</h1>
+         <div class ="tab">
+            <button class="tablinks" onclick="openPage(event,'Home')">Home</button>
+            <button class="tablinks" onclick="openPage(event,'Saved-Recipes')">Saved Recipes</button> <!--Perhaps a more clever name would be better-->
+            <button class="tablinks" onclick="openPage(event,'How-it-Works')">How it works</button>
+
+
+            <!-- need seperate webpages to populate after a tab is choosen -->
+        </div>
+    </header>
+    <div></div>
+    <form action= "whereDoWesendthis?@gmail.com" method= "POST">
+        <p>Add your recipes url below</p>
+        <p>
+            <label for="recipe-url" placeholder="insert recipe-url"></label>
+            <input type="text" name="recipe-url" id="url">
+        </p>
+        <button>Feed Me!</button>
+
+    </form>
+</body>
