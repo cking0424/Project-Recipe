@@ -109,22 +109,48 @@ header {
 }
 
 .TopNav div a:hover {
-    color: white;
-    background-color: seagreen;
-
+    animation-name: colorFade;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
-/*Styling Grid*/
+/*Styling Information Grid*/
 .Information {
     display: grid;
-    grid-template-columns: 300px 800px;
-    grid-template-rows: 300px 300px;
+    grid-template-columns: 200px 800px;
+    grid-template-rows: 200px 200px;
 
     column-gap: 10px;
     row-gap: 10px;
     border: 3px solid aqua;
 }
 
+.Information > div:nth-child(even) {
+    border: 3px solid seagreen;
+    border-radius: 10px;
+
+    background-color: white;
+}
+
 .Information div {
     border: 3px solid aqua;
+}
+
+#Nested-Info {
+    display: flex;
+    flex-direction: column;
+}
+
+#Nested-Info div p {
+    text-align: left;
+}
+
+#Nested-Info div:nth-child(2) {
+    flex-grow: 2;
+}
+
+
+@keyframes colorFade {
+    0% {background-color: green; color: black;}
+    100% {background-color: seagreen; color: white;}
 }
