@@ -117,7 +117,7 @@ header {
 /*Styling Grid*/
 .Information {
     display: grid;
-    grid-template-columns: 100px 300px;
+    grid-template-columns: 300px 800px;
     grid-template-rows: 300px 300px;
 
     column-gap: 10px;
