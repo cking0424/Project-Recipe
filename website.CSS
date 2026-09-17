@@ -96,21 +96,21 @@ header {
 
 /*Styling buttons*/
 .TopNav #NavHome {
-    padding: 100% 51px;
+    padding: 100% 34%;
 }
 .TopNav #NavUpload {
-    padding: 100% 8.5px;
+    padding: 100% 5.7%;
 }
 .TopNav #NavSave {
-    padding: 100% 18.5px;
+    padding: 100% 12.3%;
 }
 .TopNav #NavContact {
-    padding: 100% 30.25px;
+    padding: 100% 20.1%;
 }
 
 .TopNav div a:hover {
     animation-name: colorFade;
-    animation-duration: 0.5s;
+    animation-duration: 0.25s;
     animation-fill-mode: forwards;
 }
 
