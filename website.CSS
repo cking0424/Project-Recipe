@@ -40,13 +40,13 @@ header {
 /*Top Nav Styling*/
 .TopNav {
     position: relative;
-    inset-inline-start: -40px;
+    inset-inline-start: -2%;
     inset-block-start: -10px;
     padding-left: 50px;
 
     display: flex;
     flex-flow: row nowrap;
-    align-items: top;
+    align-items: center;
     justify-content: right;
     
     width: 100%;
@@ -65,7 +65,6 @@ header {
     text-align: center;
 
     min-width: 150px;
-    min-height: 100%;
 
     padding-top: 100%;
     padding-bottom: 100%;
@@ -85,7 +84,6 @@ header {
     font-size: 20px;
     background-color: green;
 
-    vertical-align: center;
     z-index: 20;
 }
 
@@ -93,9 +91,11 @@ header {
 .TopNav div h1 {
     font-size: 48px;
     text-align: left;
+
+    min-width: 600px;
 }
 
-.TopNav div:nth-child(1) {
+.TopNav div:nth-child(2) {
     margin-right: 250px;
     flex-basis: 600px;
 }
