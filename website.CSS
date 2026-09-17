@@ -123,7 +123,7 @@ header {
 /*Styling Information Grid*/
 .Information {
     display: grid;
-    grid-template-columns: 200px 800px;
+    grid-template-columns: 200px 800px 500px;
     grid-template-rows: 200px 200px;
 
     column-gap: 10px;
@@ -131,7 +131,13 @@ header {
     border: 3px solid aqua;
 }
 
-.Information > div:nth-child(even) {
+.Information > div:nth-child(3) {
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.Information > div:nth-child(3n+2) {
     border: 3px solid seagreen;
     border-radius: 10px;
 
@@ -155,7 +161,11 @@ header {
     flex-grow: 2;
 }
 
+/*Styling Information Grid Headers*/
 
+
+
+/*Animation for Buttons*/
 @keyframes colorFade {
     0% {background-color: green; color: black;}
     100% {background-color: seagreen; color: white;}
