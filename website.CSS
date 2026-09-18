@@ -42,7 +42,7 @@ header {
     position: relative;
     inset-inline-start: -2%;
     inset-block-start: -10px;
-    padding-left: 50px;
+    padding-left: 2.5%;
 
     display: flex;
     flex-flow: row nowrap;
@@ -82,7 +82,7 @@ header {
     text-decoration: none;
     color: black;
     font-size: 20px;
-    background-color: green;
+    background-color: seagreen;
 
     z-index: 20;
 }
@@ -105,13 +105,13 @@ header {
     padding: 100% 34%;
 }
 .TopNav #NavUpload {
-    padding: 100% 5.7%;
+    padding: 100% 11%;
 }
 .TopNav #NavSave {
-    padding: 100% 12.3%;
+    padding: 100% 13%;
 }
 .TopNav #NavContact {
-    padding: 100% 20.1%;
+    padding: 100% 20.5%;
 }
 
 .TopNav div a:hover {
@@ -138,22 +138,32 @@ header {
 }
 
 .Information > div:nth-child(3n+2) {
-    border: 3px solid seagreen;
+    border: 3px solid transparent;
     border-radius: 10px;
-
-    background-color: white;
 }
 
 .Information div {
     border: 3px solid aqua;
 }
 
+/*Flex Display inside grid*/
 #Nested-Info {
     display: flex;
     flex-direction: column;
 }
 
+#Nested-Info div:nth-child(1) {
+    flex-basis: 30px;
+    background-color: white;
+}
+#Nested-Info div:nth-child(2):hover {
+    animation-name: GradientSlide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
 #Nested-Info div p {
+    margin: 0px;
     text-align: left;
 }
 
@@ -162,11 +172,61 @@ header {
 }
 
 /*Styling Information Grid Headers*/
+#Nested-Info h1 {
+    text-align: left;
+    margin: 0px;
 
+    font-size: 32px;
+
+    overflow: hidden;
+    text-overflow: none;
+    white-space: nowrap;
+}
+/*Styling paragraphs for Information*/
+#Nested-Info #FirstP {
+    position: relative;
+
+    opacity: 10%;
+    inset-block-start: -45%;
+
+    transition: Slidedown 2s;
+}
+.Information div:nth-child(2):hover #FirstP {
+    animation-name: Slidedown;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
 
 
 /*Animation for Buttons*/
 @keyframes colorFade {
-    0% {background-color: green; color: black;}
-    100% {background-color: seagreen; color: white;}
+    0% {background-color: seagreen; color: black;}
+    100% {background-color: green; color: white;}
+}
+
+/*Animation for #Nested-Info Paragraphs*/
+@keyframes Slidedown {
+    0% {
+        opacity: 0%;
+    }
+
+    50% {
+        transform: translateY(70%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(70%);
+    }
+}
+@keyframes GradientSlide {
+    0% {
+        background-color: white;
+        opacity: 0%;
+    }
+
+    100% {
+        background-color: white;
+        opacity: 100%;
+    }
 }
