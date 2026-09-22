@@ -84,6 +84,7 @@ header {
     font-size: 20px;
     background-color: seagreen;
 
+
     z-index: 20;
 }
 
@@ -96,8 +97,9 @@ header {
 }
 
 .TopNav div:nth-child(2) {
-    margin-right: 250px;
+    margin-right: 30%;
     flex-basis: 600px;
+    overflow: visible;
 }
 
 /*Styling buttons*/
@@ -186,7 +188,7 @@ header {
 #Nested-Info #FirstP {
     position: relative;
 
-    opacity: 10%;
+    opacity: 0%;
     inset-block-start: -45%;
 
     transition: Slidedown 2s;
@@ -194,7 +196,7 @@ header {
 .Information div:nth-child(2):hover #FirstP {
     animation-name: Slidedown;
     animation-duration: 2s;
-    animation-fill-mode: both;
+    animation-fill-mode: forwards;
 }
 
 
