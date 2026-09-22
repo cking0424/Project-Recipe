@@ -1,6 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="contactPage.CSS" rel="stylesheet">
+<link href="website.CSS" rel="Stylesheet">
+<link href="Contact_page_Style.CSS" rel="stylesheet">
 <body>
-    <p>DOES THIS WORK</p>
+    <header>
+        <div class="TopNav">
+            <div><h1>Recipe Transcriber</h1></div>
+            <div href="N/A">
+                <a id="NavHome" href="N/A">Home</a>
+            </div>
+            <div>
+                <a id="NavUpload" href="N/A">Upload Recipies</a>
+            </div>
+            <div>
+                <a id="NavSave" href="N/A">Save Recipies</a>
+            </div>
+            <div>
+                <a id="NavContact" href="N/A">Contact Us</a>
+            </div>
+        </div>      
+         <div class ="tab"> 
+        </div>
+    </header>
+    <br>
+    <!--Tab Links-->
+    <div class ="tab">
+        <button class ="tablinks" onclick= "openTab(event, 'How it works')">How it works?</button>
+        <button class ="tablinks" onclick= "openTab(event,'Why we did it')">Why we did it?</button>
+    </div>
+    <!--Tab content-->
+    <div id="How it works" class="tabcontent">
+        <h3>How it works</h3>
+        <p>Copy a video url from Facebook, Instagram, Youtube, or TikTok into our homepage textbox.<br/> 
+           A transciber creates a word file. Using code we look for keywords and display ingredients, and cooktime </p>
+    </div>
+    <!--I will make this description longer-->
+    <div id="Why we did it" class="tabcontent">
+        <h3>Why we did it</h3>
+        <p>We took on this project to simplify how we saved our recipes. <div/>
+        </p>
+    </div>
+    <script>
+        function openTab(evt, Name){
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for(i=0; i <tabcontent.length; i++ ){
+                tabcontent[i].style.display= "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for(i = 0; i< tablinks.length; i++){
+                tablinks[i].className = tablinks[i].className.replace("active", "");
+            }
+            
+            document.getElementById(Name).style.display="block";
+            evt.currentTarget.className += "active";
+        }
+    </script>
 </body>
