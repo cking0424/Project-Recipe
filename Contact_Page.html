@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="website.CSS" rel="Stylesheet">
 <link href="Contact_page_Style.CSS" rel="stylesheet">
 <body>
     <header>
         <div class="TopNav">
-            <div><h1>Recipe Transcriber</h1></div>
+            <div><h1>SnapGredients</h1></div>
             <div href="N/A">
                 <a id="NavHome" href="N/A">Home</a>
             </div>
             <div>
-                <a id="NavUpload" href="N/A">Upload Recipies</a>
+                <a id="NavFaves" href="N/A">Community Recipies</a>
             </div>
             <div>
-                <a id="NavSave" href="N/A">Save Recipies</a>
+                <a id="NavSave" href="N/A">Saved Recipies</a>
             </div>
             <div>
                 <a id="NavContact" href="N/A">Contact Us</a>
@@ -22,42 +21,31 @@
          <div class ="tab"> 
         </div>
     </header>
-    <br>
-    <!--Tab Links-->
-    <div class ="tab">
-        <button class ="tablinks" onclick= "openTab(event, 'How it works')">How it works?</button>
-        <button class ="tablinks" onclick= "openTab(event,'Why we did it')">Why we did it?</button>
-    </div>
-    <!--Tab content-->
-    <div id="How it works" class="tabcontent">
-        <h3>How it works</h3>
-        <p>Copy a video url from Facebook, Instagram, Youtube, or TikTok into our homepage textbox.<br/> 
-           A transciber creates a word file. Using code we look for keywords and display ingredients, and cooktime </p>
-    </div>
-    <!--I will make this description longer-->
-    <div id="Why we did it" class="tabcontent">
-        <h3>Why we did it</h3>
-        <p>We took on this project to simplify how we saved our recipes. <div/>
-        </p>
-    </div>
-    <script>
-        function openTab(evt, Name){
-            var i, tabcontent, tablinks;
-
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for(i=0; i <tabcontent.length; i++ ){
-                tabcontent[i].style.display= "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for(i = 0; i< tablinks.length; i++){
-                tablinks[i].className = tablinks[i].className.replace("active", "");
-            }
-            
-            document.getElementById(Name).style.display="block";
-            evt.currentTarget.className += "active";
-        }
-    </script>
 </body>
-
-
-    <!--I will add a contact form and edit the CSS for the tabs-->
+<body>
+    <div class="spacer">
+        <div class ="container">
+            <div class = "row">
+                <header class = "TopBox">
+                <h2 class = "boxContent1"> Why We Chose This Project</h2>
+                <p style => We wanted to design an application that would be used to change the way we saved our reicpes. 
+                    Also we wanted to help all who are looking for a simpler way to have those ingredients, food substitutes, calories, and even prices, in one localized application, in which you store and track those tasty recipes you dream of making. </p>
+                </header>
+            </div>
+        </div>
+    </div>
+    <div class="spacer">
+        <h2>Having Troubles With Our Site?</h2>
+            
+            <form action = "https://UPDATETHISEMAIL.com/ticket" method ="POST">
+            <label for="issues">What's going on?</label>
+            <select id = "issues" name ="issues">
+                <option value="Broken Transcriber">Broken Transcriber</option>
+                <option value="Incorrect Recipe Showing">Incorrect Recipe Showing</option>
+                <option value="Recipe Not Populating">Recipe Not Populating</option>
+                <option value="Website Not Working">Website Not Working</option>
+                <option value="Something Else">Something Else</option>
+            </select>
+            <button>Submit</button>
+        </form>
+    </div>
