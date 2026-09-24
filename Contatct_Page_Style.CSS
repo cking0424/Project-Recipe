@@ -1,22 +1,98 @@
+/*Header*/
+header {
+    background-color: seagreen;
+}
+body{
+    background-color: #ffe4c4;
+}
+#Slogan {
+    position: relative;
+    inset-block: 20px;
+}
+
 /*Top Nav Styling*/
 .TopNav {
     position: relative;
-    inset-inline-start: -40px;
-    inset-block-start: -10px;
-    padding-left: 50px;
-
+   
     display: flex;
-    flex-flow: row nowrap;
-    align-items: top;
+    flex-flow: row ;
+    align-items: center;
     justify-content: right;
     
     width: 100%;
+    margin:auto;
     height: 100px;
 
     background-color: seagreen;
     overflow: hidden;
 
     float: left;
+}
+
+/*Adjusting Subelements of Flex*/
+.TopNav div {
+    background-color: transparent;
+    flex-basis: 150px;
+    text-align: center;
+
+    min-width: 150px;
+
+    padding-top: 100%;
+    padding-bottom: 100%;
+
+    align-self: center;
+    z-index: 20;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: none;
+}
+
+/*Styling the link elements*/
+.TopNav div a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    background-color: seagreen;
+
+
+    z-index: 20;
+}
+
+/*Styling Header*/
+.TopNav div h1 {
+    font-size: 48px;
+    text-align: left;
+
+    min-width: 600px;
+}
+
+.TopNav div:nth-child(1) {
+    margin-right: 30%;
+    flex-basis: 600px;
+    overflow: visible;
+}
+
+/*Styling buttons*/
+.TopNav #NavHome {
+    padding: 100% 34%;
+}
+.TopNav #NavFaves {
+    padding: 100% 11%;
+}
+.TopNav #NavSave {
+    padding: 100% 13%;
+    word-wrap: normal;
+}
+.TopNav #NavContact {
+    padding: 100% 20.5%;
+    word-wrap: normal;
+}
+
+.TopNav div a:hover {
+    animation-name: colorFade;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
 }
 
 .tab{
@@ -48,4 +124,31 @@
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+/*Animation for Buttons*/
+@keyframes colorFade {
+    0% {background-color: seagreen; color: black;}
+    100% {background-color: green; color: white;}
+}
+
+.spacer{
+    padding: 100px;
+    border: 20px;
+    margin: 15px;
+}
+.spacer2{
+    padding: 100x;
+    border: 70px;
+    margin: 15px;
+
+}
+
+.TopBox{
+    background-color: inherit;
+}
+
+.container{
+    border:50px;
+
 }
