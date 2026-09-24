@@ -1,26 +1,16 @@
-/*Header*/
-header {
-    background-color: seagreen;
-}
-body{
-    background-color: #ffe4c4;
-}
-#Slogan {
-    position: relative;
-    inset-block: 20px;
-}
-
 /*Top Nav Styling*/
 .TopNav {
     position: relative;
-   
+    inset-inline-start: -2%;
+    inset-block-start: -10px;
+    padding-left: 2.5%;
+
     display: flex;
-    flex-flow: row ;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: right;
     
     width: 100%;
-    margin:auto;
     height: 100px;
 
     background-color: seagreen;
@@ -67,7 +57,7 @@ body{
     min-width: 600px;
 }
 
-.TopNav div:nth-child(1) {
+.TopNav div:nth-child(2) {
     margin-right: 30%;
     flex-basis: 600px;
     overflow: visible;
@@ -77,22 +67,26 @@ body{
 .TopNav #NavHome {
     padding: 100% 34%;
 }
-.TopNav #NavFaves {
+.TopNav #NavUpload {
     padding: 100% 11%;
 }
 .TopNav #NavSave {
     padding: 100% 13%;
-    word-wrap: normal;
 }
 .TopNav #NavContact {
     padding: 100% 20.5%;
-    word-wrap: normal;
 }
 
 .TopNav div a:hover {
     animation-name: colorFade;
     animation-duration: 0.25s;
     animation-fill-mode: forwards;
+}
+
+/*Animation for Buttons*/
+@keyframes colorFade {
+    0% {background-color: seagreen; color: black;}
+    100% {background-color: green; color: white;}
 }
 
 .tab{
@@ -124,12 +118,6 @@ body{
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-}
-
-/*Animation for Buttons*/
-@keyframes colorFade {
-    0% {background-color: seagreen; color: black;}
-    100% {background-color: green; color: white;}
 }
 
 .spacer{
