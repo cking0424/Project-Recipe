@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommended Recipes | Recipe Transcriber</title>
     <link href="website.CSS" rel="stylesheet">
-        <link href="Recommended.CSS" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="Recommended.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -34,18 +37,30 @@
         <h1>Recommended Recipes</h1>
         <p>Try one of these recipe ideas, or transcribe your own favorite video.</p>
 
-        <section class="Information" aria-label="Recommended recipe ideas">
-            <article id="Nested-Info">
-                <div><h2>Quick Pasta</h2></div>
-                <div><p>Simple, comforting pasta for a busy weeknight.</p></div>
+        <section class="Information RecipeGrid" aria-label="Recommended recipe ideas">
+            <article class="RecipeCard">
+                <div class="CardImage">
+                    <img src="pasta.jpg" alt="Spicy rigatoni vodka pasta">
+                    <a class="PhotoSource" href="https://homecookingcollective.com/carbones-spicy-rigatoni-vodka-pasta-copycat-recipe/" target="_blank" rel="noopener">Source: homecookingcollective.com</a>
+                </div>
+                <div class="CardTitle"><h2>Spicy Rigatoni Vodka Pasta</h2></div>
+                <div class="CardText"><p>Creamy, spicy vodka sauce clinging to rigatoni, a copycat of a restaurant favorite.</p></div>
             </article>
-            <article id="Nested-Info">
-                <div><h2>Fresh Tacos</h2></div>
-                <div><p>Build flavorful tacos with fresh toppings and your favorite filling.</p></div>
+            <article class="RecipeCard">
+                <div class="CardImage">
+                    <img src="tacos.jpg" alt="Chipotle beef tacos">
+                    <a class="PhotoSource" href="https://www.halfbakedharvest.com/chipotle-beef-tacos/" target="_blank" rel="noopener">Source: halfbakedharvest.com</a>
+                </div>
+                <div class="CardTitle"><h2>Chipotle Beef Tacos</h2></div>
+                <div class="CardText"><p>Smoky chipotle beef tucked into crisp, golden tacos with fresh cilantro and lime.</p></div>
             </article>
-            <article id="Nested-Info">
-                <div><h2>Easy Dessert</h2></div>
-                <div><p>Finish your meal with a quick homemade dessert.</p></div>
+            <article class="RecipeCard">
+                <div class="CardImage">
+                    <img src="dessert.jpg" alt="Stack of fudgy cacao walnut brownies">
+                    <a class="PhotoSource" href="https://www.natalieshealth.com/fudgy-cacao-walnut-brownies/" target="_blank" rel="noopener">Source: natalieshealth.com</a>
+                </div>
+                <div class="CardTitle"><h2>Fudgy Cacao Walnut Brownies</h2></div>
+                <div class="CardText"><p>Rich, fudgy brownies studded with walnuts and finished with a chocolate drizzle.</p></div>
             </article>
         </section>
     </main>
