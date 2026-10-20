@@ -9,6 +9,7 @@ A simple tool that takes YouTube or TikTok video links and automatically transcr
 
 ## AI USAGE
 **Recommended**
-Learned how I could add fonts. 
-Had it show me how to use cards and how to style them. 
-Troubleshooted to see how I could incorporate images that also worked on a website and not just locally.
+* Learned how I could add fonts. 
+* Had it show me how to use cards and how to style them. 
+* Troubleshooted to see how I could incorporate images that also worked on a website and not just locally.
+* Had it teach me how to put the cards into grids
