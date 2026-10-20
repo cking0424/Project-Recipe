@@ -8,7 +8,7 @@ A simple tool that takes YouTube or TikTok video links and automatically transcr
 * **Recipe Formatting:** Automatically separates the text into an Ingredients list and Step-by-Step Instructions.
 
 ## AI USAGE
-**Recommended**
+**Recommended Page (HTML & CSS)**
 * Learned how I could add fonts. 
 * Had it show me how to use cards and how to style them. 
 * Troubleshooted to see how I could incorporate images that also worked on a website and not just locally.
