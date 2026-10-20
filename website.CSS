@@ -173,7 +173,7 @@ header {
     flex-grow: 2;
 }
 
-/*Styling Information Grid Headers*/
+
 #Nested-Info h1 {
     text-align: left;
     margin: 0px;
@@ -184,7 +184,7 @@ header {
     text-overflow: none;
     white-space: nowrap;
 }
-/*Styling paragraphs for Information*/
+
 #Nested-Info #FirstP {
     position: relative;
 
@@ -199,14 +199,11 @@ header {
     animation-fill-mode: forwards;
 }
 
-
-/*Animation for Buttons*/
 @keyframes colorFade {
     0% {background-color: seagreen; color: black;}
     100% {background-color: green; color: white;}
 }
 
-/*Animation for #Nested-Info Paragraphs*/
 @keyframes Slidedown {
     0% {
         opacity: 0%;
