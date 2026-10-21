@@ -106,14 +106,17 @@ header {
 .TopNav #NavHome {
     padding: 100% 34%;
 }
-.TopNav #NavUpload {
-    padding: 100% 11%;
+.TopNav #Ben {
+    padding: 100% 28.5%;
 }
-.TopNav #NavSave {
+.TopNav #Chand {
     padding: 100% 13%;
 }
-.TopNav #NavContact {
+.TopNav #Max {
     padding: 100% 20.5%;
+}
+.TopNav #Sydney {
+    padding: 100% 24%
 }
 
 .TopNav div a:hover {
@@ -127,10 +130,12 @@ header {
     display: grid;
     grid-template-columns: 0.33fr 1.53fr 1.33fr;
     grid-template-rows: 200px 200px;
+    background-color: #67d686;
 
     column-gap: 10px;
     row-gap: 10px;
-    border: 3px solid aqua;
+    border: 3px solid #67d686;
+    border-radius: 10px;
 }
 
 .Information > div:nth-child(3) {
@@ -140,7 +145,7 @@ header {
 }
 
 .Information > div:nth-child(3n+2) {
-    border: 3px solid transparent;
+    border: 5px solid white;
     border-radius: 10px;
 }
 
@@ -158,11 +163,6 @@ header {
     flex-basis: 30px;
     background-color: white;
 }
-#Nested-Info div:nth-child(2):hover {
-    animation-name: GradientSlide;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
 
 #Nested-Info div p {
     margin: 0px;
@@ -170,10 +170,11 @@ header {
 }
 
 #Nested-Info div:nth-child(2) {
+    background-color: white;
     flex-grow: 2;
 }
 
-
+/*Styling Information Grid Headers*/
 #Nested-Info h1 {
     text-align: left;
     margin: 0px;
@@ -184,29 +185,25 @@ header {
     text-overflow: none;
     white-space: nowrap;
 }
-
+/*Styling paragraphs for Information*/
 #Nested-Info #FirstP {
     position: relative;
 
-    opacity: 0%;
-    inset-block-start: -45%;
+    opacity: 100%;
 
-    transition: Slidedown 2s;
-}
-.Information div:nth-child(2):hover #FirstP {
-    animation-name: Slidedown;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
 }
 
+
+/*Animation for Buttons*/
 @keyframes colorFade {
     0% {background-color: seagreen; color: black;}
     100% {background-color: green; color: white;}
 }
 
+/*Animation for #Nested-Info Paragraphs*/
 @keyframes Slidedown {
     0% {
-        opacity: 0%;
+        opacity: 10%;
     }
 
     50% {
