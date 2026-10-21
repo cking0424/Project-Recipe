@@ -1,0 +1,192 @@
+/*Top Nav Styling*/
+.TopNav {
+    position: relative;
+    inset-inline-start: -2%;
+    inset-block-start: -10px;
+    padding-left: 2.5%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: right;
+    
+    width: 100%;
+    height: 100px;
+
+    background-color: seagreen;
+    overflow: hidden;
+
+    float: left;
+}
+
+/*Adjusting Subelements of Flex*/
+.TopNav div {
+    background-color: transparent;
+    flex-basis: 150px;
+    text-align: center;
+
+    min-width: 150px;
+
+    padding-top: 100%;
+    padding-bottom: 100%;
+
+    align-self: center;
+    z-index: 20;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: none;
+}
+
+/*Styling the link elements*/
+.TopNav div a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    background-color: seagreen;
+
+
+    z-index: 20;
+}
+
+/*Styling Header*/
+.TopNav div h1 {
+    font-size: 48px;
+    text-align: left;
+
+    min-width: 600px;
+}
+
+.TopNav div:nth-child(2) {
+    margin-right: 30%;
+    flex-basis: 600px;
+    overflow: visible;
+}
+
+/*Styling buttons*/
+.TopNav #NavHome {
+    padding: 100% 34%;
+}
+.TopNav #Ben {
+    padding: 100% 28.5%;
+}
+.TopNav #Chand {
+    padding: 100% 13%;
+}
+.TopNav #Max {
+    padding: 100% 20.5%;
+}
+.TopNav #Sydney {
+    padding: 100% 24%
+}
+
+.TopNav div a:hover {
+    animation-name: colorFade;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+/*Animation for Buttons*/
+@keyframes colorFade {
+    0% {background-color: seagreen; color: black;}
+    100% {background-color: green; color: white;}
+}
+
+/*END OF TOP NAV STYLING*/
+
+/*Card Container Styling*/
+
+.CardContainer {
+    display: grid;
+
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+    grid-template-rows: 150px 150px;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    border: 3px solid aqua;
+}
+
+.CardContainer > div {
+    border: 4px solid red;
+}
+
+.CardContainer > div:nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.CardContainer > div:nth-child(2) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.CardContainer > div:nth-child(3) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.card {
+    border: 4px solid transparent;
+    border-radius: 3px;
+
+}
+
+.container h4 {
+    background-color: seagreen;
+    padding: 6px;
+}
+
+/*Styling Flex inside of grid*/
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card > div:nth-child(1) {
+    flex-grow: 2;
+}
+
+/*Results Styling*/
+#HeaderSelect {
+    margin-left: 10%;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 10%;
+    margin-right: 10%;
+
+    flex-wrap: wrap;
+    overflow: scroll;
+
+    min-height: 300px;
+    max-height: 300px;
+
+    border: 3px solid aqua;
+}
+
+.results > div {
+    flex-basis: 25%;
+    min-width: 25%;
+}
+
+/*Styling Randomizer buttons*/
+#Randomizer, #Resetter {
+    background-color: green;
+    color: white;
+    padding: 16px 32px;
+    margin: 4px;
+
+    border: none;
+    border-radius: 3px;
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+#Randomizer:hover, #Resetter:hover {
+    background-color: seagreen;
+}
+
