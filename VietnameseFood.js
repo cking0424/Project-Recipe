@@ -16,19 +16,18 @@ function domLoaded () {
 }
 
 function randomizeMain() {
-    var newElement = document.createElement("div");
-    var resultElement = document.querySelector(".results");
-    var oldElement = resultElement.firstChild;
+    const newElement = document.createElement("div");
+    const resultElement = document.querySelector(".CardContainer");
+    const oldElement = document.querySelector(".CardContainer > div:nth-child(1)");
 
-    if (numElements > 30) {
-        overflowProtection();
-    }
-
-    const elementHtml = `<div class=\"card\"><div class=\"Image\"> <img src=\"Placeholder.png\" alt=\"Vietnamese Food\" style=\"width: 100%\"></div><div class=\"container\"><h4><b>Main Course ${numMain+1}</b></h4><p>Selected Main Course Appears Here.</p></div></div> `;
+    const elementHtml = `<div class=\"Image\"> <img id=\"Image\" src=\"yummyfood.png\" alt=\"Vietnamese Food\" style=\"width: 100%\" style=\"height: 100%\"></div><div class=\"container\"><h4><b>Main Course ${numMain+1}</b></h4><p>Selected Main Course Appears Here.</p></div> `;
     newElement.innerHTML = elementHtml;
-    resultElement.insertBefore(newElement, oldElement);
+    resultElement.replaceChild(newElement, oldElement);
     numElements++;
     numMain++;
+
+    document.querySelector(".CardContainer > div:nth-child(1)").addEventListener("click", randomizeMain);
+    test();
 }
 
 function randomizeAll() {
@@ -39,34 +38,30 @@ function randomizeAll() {
 
 function randomizeSide() {
     var newElement = document.createElement("div");
-    var resultElement = document.querySelector(".results");
-    var oldElement = resultElement.firstChild;
+    var resultElement = document.querySelector(".CardContainer");
+    var oldElement = document.querySelector(".CardContainer > div:nth-child(2)");
 
-    if (numElements > 30) {
-        overflowProtection();
-    }
-
-    const elementHtml = `<div class=\"card\"><div class=\"Image\"> <img src=\"Placeholder.png\" alt=\"Vietnamese Food\" style=\"width: 100%\"></div><div class=\"container\"><h4><b>Side Course ${numSide+1}</b></h4><p>Selected Side Course Appears Here.</p></div></div> `;
+    const elementHtml = `<div class=\"Image\"> <img id=\"Image\" src=\"yummyfood.png\" alt=\"Vietnamese Food\" style=\"width: 100%\" style=\"height: 100%\"></div><div class=\"container\"><h4><b>Side Course ${numSide+1}</b></h4><p>Selected Side Course Appears Here.</p></div> `;
     newElement.innerHTML = elementHtml;
-    resultElement.insertBefore(newElement, oldElement);
+    resultElement.replaceChild(newElement, oldElement);
     numElements++;
     numSide++;
+
+    document.querySelector(".CardContainer > div:nth-child(2)").addEventListener("click", randomizeSide);
 }
 
 function randomizeDrink() {
     var newElement = document.createElement("div");
-    var resultElement = document.querySelector(".results");
-    var oldElement = resultElement.firstChild;
+    var resultElement = document.querySelector(".CardContainer");
+    var oldElement = document.querySelector(".CardContainer > div:nth-child(3)");
 
-    if (numElements > 30) {
-        overflowProtection();
-    }
-
-    const elementHtml = `<div class=\"card\"><div class=\"Image\"> <img src=\"Placeholder.png\" alt=\"Vietnamese Food\" style=\"width: 100%\"></div><div class=\"container\"><h4><b>Drink ${numDrink+1}</b></h4><p>Selected Drink Appears Here.</p></div></div> `;
+    const elementHtml = `<div class=\"Image\"> <img id=\"Image\" src=\"yummyfood.png\" alt=\"Vietnamese Food\" style=\"width: 100%\" style=\"height: 100%\"></div><div class=\"container\"><h4><b>Drink ${numDrink+1}</b></h4><p>Selected Drink Appears Here.</p></div> `;
     newElement.innerHTML = elementHtml;
-    resultElement.insertBefore(newElement, oldElement);
+    resultElement.replaceChild(newElement, oldElement);
     numElements++;
     numDrink++;
+
+    document.querySelector(".CardContainer > div:nth-child(3)").addEventListener("click", randomizeDrink);
 }
 
 function resetRecipe() {
@@ -80,10 +75,35 @@ function resetRecipe() {
     numSide = 0;
     numDrink = 0;
     
+    randomizeAll();
 }
 
-function overflowProtection() {
-    var resultElement = document.querySelector(".results");
+async function test() {
+    const randNums = {
+        firstNum: 10,
+        secondNum: 15,
+        thridNum: 20
+    };
+    const url = "vietnameseFood.php";
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    resultElement.removeChild(resultElement.lastChild);
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(randNums),
+            header: {
+                "Content-Type": "application/json",
+            },
+        });
+        if (!response.ok) {
+            throw new Error(`Response Status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        console.log(result);
+    } catch(error) {
+        console.log("Error Occured");
+        console.error(error.message);
+    }
 }
