@@ -13,56 +13,67 @@
 <body>
     <header>
 
-        <div class="TopNav">
+          <div class="TopNav">
             <div><img src="wow"></div>
-            <div><h1>SnapGredients</h1></div>
+            <div><h1>DinnerSlots</h1></div>
             <div href="N/A">
                 <a id="NavHome" href="Website Recipe Transcriber.html">Home</a>
             </div>
             <div>
-                <a id="NavUpload" href="Recommended.html">Recommended</a>
+                <a id="Ben" href="Recommended.html">Chinese</a>
             </div>
             <div>
-                <a id="NavSave" href="myrecipe.html">Save Recipies</a>
+                <a id="Chand" href="myrecipe.html">Mediterranean</a>
             </div>
             <div>
-                <a id="NavContact" href="Contact_Page.html">Contact Us</a>
+                <a id="Max" href="vietnameseFood.html">Vietnamese</a>
+            </div>
+            <div>
+                <a id="Sydney" href="Contact_Page.html">American</a>
             </div>
         </div>
+                
                 
     </header>
     <br>
 
     <main>
-        <h1>Recommended Recipes</h1>
-        <p>Try one of these recipe ideas, or transcribe your own favorite video.</p>
+    <h1>Recommended Dinner</h1>
+    <p>Try one of these chinese food ideas</p>
 
-        <section class="Information RecipeGrid" aria-label="Recommended recipe ideas">
-            <article class="RecipeCard">
-                <div class="CardImage">
-                    <img src="pasta.jpg" alt="Spicy rigatoni vodka pasta">
-                    <a class="PhotoSource" href="https://homecookingcollective.com/carbones-spicy-rigatoni-vodka-pasta-copycat-recipe/" target="_blank" rel="noopener">Source: homecookingcollective.com</a>
-                </div>
-                <div class="CardTitle"><h2>Spicy Rigatoni Vodka Pasta</h2></div>
-                <div class="CardText"><p>Creamy, spicy vodka sauce clinging to rigatoni, a copycat of a restaurant favorite.</p></div>
-            </article>
-            <article class="RecipeCard">
-                <div class="CardImage">
-                    <img src="tacos.jpg" alt="Chipotle beef tacos">
-                    <a class="PhotoSource" href="https://www.halfbakedharvest.com/chipotle-beef-tacos/" target="_blank" rel="noopener">Source: halfbakedharvest.com</a>
-                </div>
-                <div class="CardTitle"><h2>Chipotle Beef Tacos</h2></div>
-                <div class="CardText"><p>Smoky chipotle beef tucked into crisp, golden tacos with fresh cilantro and lime.</p></div>
-            </article>
-            <article class="RecipeCard">
-                <div class="CardImage">
-                    <img src="dessert.jpg" alt="Stack of fudgy cacao walnut brownies">
-                    <a class="PhotoSource" href="https://www.natalieshealth.com/fudgy-cacao-walnut-brownies/" target="_blank" rel="noopener">Source: natalieshealth.com</a>
-                </div>
-                <div class="CardTitle"><h2>Fudgy Cacao Walnut Brownies</h2></div>
-                <div class="CardText"><p>Rich, fudgy brownies studded with walnuts and finished with a chocolate drizzle. (Careful of allergies) </p></div>
-            </article>
-        </section>
+    <section class="Information RecipeGrid" aria-label="Recommended recipe ideas">
+        <article class="RecipeCard" id="card-Appetizer">
+            <div class="CardImage">
+                <img alt="">
+                <a class="PhotoSource" target="_blank" rel="noopener" hidden></a>
+            </div>
+            <div class="CardTitle"><span class="Category">Appetizer</span><h2>Loading…</h2></div>
+            <div class="CardText"><p></p></div>
+        </article>
+
+        <article class="RecipeCard" id="card-Entree">
+            <div class="CardImage">
+                <img alt="">
+                <a class="PhotoSource" target="_blank" rel="noopener" hidden></a>
+            </div>
+            <div class="CardTitle"><span class="Category">Entree</span><h2>Loading…</h2></div>
+            <div class="CardText"><p></p></div>
+        </article>
+
+        <article class="RecipeCard" id="card-Dessert">
+            <div class="CardImage">
+                <img alt="">
+                <a class="PhotoSource" target="_blank" rel="noopener" hidden></a>
+            </div>
+            <div class="CardTitle"><span class="Category">Dessert</span><h2>Loading…</h2></div>
+            <div class="CardText"><p></p></div>
+        </article>
+    </section>
+
+<script src="Recommended.js"></script>
+</body>
+
+        <button id="generate">Generate</button>
     </main>
 </body>
 </html>
