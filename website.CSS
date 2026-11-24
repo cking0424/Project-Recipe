@@ -118,6 +118,9 @@ header {
 .TopNav #Sydney {
     padding: 100% 24%
 }
+.TopNav #Sign {
+    padding: 100% 15%;
+}
 
 .TopNav div a:hover {
     animation-name: colorFade;
