@@ -1,0 +1,241 @@
+/*Website General Formatting*/
+body{
+    background-color: #ffe4c4;
+}
+h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p{
+    text-align: center;
+}
+form{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.tab{
+    text-align: center;
+}
+.box{
+   width:450px;
+   height:45px;
+   border-radius:15px;
+}
+.image{
+    text-align: center;
+    height:50px;
+    width:50px;
+}
+
+/*Header*/
+header {
+    background-color: seagreen;
+}
+
+#Slogan {
+    position: relative;
+    inset-block: 20px;
+}
+
+/*Top Nav Styling*/
+.TopNav {
+    position: relative;
+    inset-inline-start: -2%;
+    inset-block-start: -10px;
+    padding-left: 2.5%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: right;
+    
+    width: 100%;
+    height: 100px;
+
+    background-color: seagreen;
+    overflow: hidden;
+
+    float: left;
+}
+
+/*Adjusting Subelements of Flex*/
+.TopNav div {
+    background-color: transparent;
+    flex-basis: 150px;
+    text-align: center;
+
+    min-width: 150px;
+
+    padding-top: 100%;
+    padding-bottom: 100%;
+
+    align-self: center;
+    z-index: 20;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: none;
+}
+
+/*Styling the link elements*/
+.TopNav div a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    background-color: seagreen;
+
+
+    z-index: 20;
+}
+
+/*Styling Header*/
+.TopNav div h1 {
+    font-size: 48px;
+    text-align: left;
+
+    min-width: 600px;
+}
+
+.TopNav div:nth-child(2) {
+    margin-right: 30%;
+    flex-basis: 600px;
+    overflow: visible;
+}
+
+/*Styling buttons*/
+.TopNav #NavHome {
+    padding: 100% 34%;
+}
+.TopNav #Ben {
+    padding: 100% 28.5%;
+}
+.TopNav #Chand {
+    padding: 100% 13%;
+}
+.TopNav #Max {
+    padding: 100% 20.5%;
+}
+.TopNav #Sydney {
+    padding: 100% 24%;
+}
+.TopNav #Sign {
+    padding: 100% 15%;
+}
+
+.TopNav div a:hover {
+    animation-name: colorFade;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+/*Styling Information Grid*/
+.Information {
+    display: grid;
+    grid-template-columns: 0.33fr 1.53fr 1.33fr;
+    grid-template-rows: 200px 200px;
+    background-color: #67d686;
+
+    column-gap: 10px;
+    row-gap: 10px;
+    border: 3px solid #67d686;
+    border-radius: 10px;
+}
+
+.Information > div:nth-child(3) {
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.Information > div:nth-child(3n+2) {
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.Information div {
+    border: 3px solid aqua;
+}
+
+/*Flex Display inside grid*/
+#Nested-Info {
+    display: flex;
+    flex-direction: column;
+}
+
+#Nested-Info div:nth-child(1) {
+    flex-basis: 30px;
+    background-color: white;
+}
+
+#Nested-Info div p {
+    margin: 0px;
+    text-align: left;
+}
+
+#Nested-Info div:nth-child(2) {
+    background-color: white;
+    flex-grow: 2;
+}
+
+/*Styling Information Grid Headers*/
+#Nested-Info h1 {
+    text-align: left;
+    margin: 0px;
+
+    font-size: 32px;
+
+    overflow: hidden;
+    text-overflow: none;
+    white-space: nowrap;
+}
+/*Styling paragraphs for Information*/
+#Nested-Info #FirstP {
+    position: relative;
+
+    opacity: 100%;
+
+}
+
+/*Styling for Error Handlers */
+.form-error {
+    color:red;
+    text-align: center;
+}
+.form-success {
+    color:green;
+    text-align: center;
+}
+
+
+/*Animation for Buttons*/
+@keyframes colorFade {
+    0% {background-color: seagreen; color: black;}
+    100% {background-color: green; color: white;}
+}
+
+/*Animation for #Nested-Info Paragraphs*/
+@keyframes Slidedown {
+    0% {
+        opacity: 10%;
+    }
+
+    50% {
+        transform: translateY(70%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(70%);
+    }
+}
+@keyframes GradientSlide {
+    0% {
+        background-color: white;
+        opacity: 0%;
+    }
+
+    100% {
+        background-color: white;
+        opacity: 100%;
+    }
+}
