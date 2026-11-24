@@ -1,6 +1,10 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<link href="website.CSS" rel="Stylesheet">
+<link href="../Styling/website.CSS" rel="Stylesheet">
 <body>
     <header>
 
@@ -8,7 +12,7 @@
             <div><img src="wow"></div>
             <div><h1>SnapGredients</h1></div>
             <div href="N/A">
-                <a id="NavHome" href="Website Recipe Transcriber.html">Home</a>
+                <a id="NavHome" href="Website Recipe Transcriber.php">Home</a>
             </div>
             <div>
                 <a id="Ben" href="Recommended.html">Chinese</a>
@@ -27,6 +31,11 @@
             </div>
         </div>
                 
+       
+         <div class ="tab">
+            
+
+        </div>
     </header>
     <br>
 
@@ -59,6 +68,8 @@
         </div>
     </div>
     </div>
+
+    <?= $_SESSION["username"];?>
 
     
 </body>
