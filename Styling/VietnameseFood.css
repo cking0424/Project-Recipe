@@ -240,25 +240,45 @@ h1{
     margin-left: 0%;
 }
 
+/*Styling Favorites*/
 .results {
     display: flex;
     flex-direction: row;
-
     margin-left: 10%;
     margin-right: 10%;
 
     flex-wrap: wrap;
     overflow: scroll;
 
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 125px;
+    max-height: 250px;
 
-    border: 3px solid aqua;
+    border: 6px solid lightgray;
+    border-radius: 25px;
 }
 
 .results > div {
-    flex-basis: 25%;
-    min-width: 25%;
+    border: 2px solid green;
+    background-color: seagreen;
+    flex-basis: 24.6%;
+    min-width: 24.6%;
+}
+
+.results .container p {
+    position: relative;
+
+    inset-block-start: -22px;
+    max-height: 69px;
+
+    overflow: scroll;
+
+    margin-left: 1%;
+}
+
+.results a {
+    position: relative;
+    inset-block-start: -133px;
+    inset-inline-start: 280px;
 }
 
 /*Styling Randomizer buttons*/
@@ -287,6 +307,20 @@ h1{
     text-align: center;
 
     cursor: pointer;
+}
+
+/*Styling for login status*/
+.login_status {
+    position: absolute;
+    inset-inline-start: 1%;
+    inset-block-start: 10%;
+
+    padding: 4px;
+    border: 3px solid darkgreen;
+    border-radius: 4px;
+    background-color: seagreen;
+
+    z-index: 999;
 }
 
 #Randomizer:hover, #Resetter:hover {
