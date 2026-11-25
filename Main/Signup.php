@@ -1,6 +1,7 @@
 <?php 
     require_once '../includes/config.php';
     require_once '../includes/signup/signup_view-inc.php';
+    require_once '../includes/login/login_view-inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
 
-    <link href="../Styling/LogInPage.CSS" rel="stylesheet">
+    <link href="../Styling/LogInPage.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -45,25 +46,76 @@
         </div>
     </header>
     <br>
-    
-    <h3>Signup</h3>
-
-    <form action="../includes/Signup/signup-inc.php" method="post">
-        <?php check_signup_data(); ?>
-        <button>Signup</button>
-    </form>
-    <div>
-    <?php 
-    check_signup_errors();
-    ?>
+    <div class="login_check">
+        <?php output_username() ?>
     </div>
-    <h3>Log In</h3>
+    <div class="forms">
+        <div class="innerform">
+            <div>
+                <div>
+                    <h3>Login</h3>
+                </div>
 
-    <form action="../includes/login/login-inc.php" method="post">
-        <input type="text" name="username" placeholder="Username" >
-        <input type="password" name="pwd" placeholder="Password" >
-        <button>Log In</button>
-    </form>
+                <div>
+                    <form action="../includes/login/login-inc.php" method="post">
 
+                        <div>
+                            <input type="text" name="username" placeholder="Username" >
+                        </div>
+
+                        <div>
+                            <input type="password" name="pwd" placeholder="Password" >
+                        </div>
+
+                        <div>
+                            <button>Login</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div>
+                    <?php
+                    check_login_errors();
+                    ?>
+                </div>
+            </div>
+        </div>
+    
+        <div class="innerform">
+            <div>
+                <h3>Signup</h3>
+            </div>
+            
+            <div>
+                <form action="../includes/Signup/signup-inc.php" method="post">
+
+                    <div>
+                        <?php check_signup_data(); ?>
+                    </div>
+    
+                    <div>
+                        <button>Signup</button>
+                    </div>
+
+                </form>
+            </div>
+            <div>
+                <?php 
+                check_signup_errors();
+                ?>
+            </div>
+        </div>
+
+        <div class="innerform">
+            <div>
+                <h3>Logout</h3>
+
+                <form action="../includes/login/logout-inc.php" method="post">
+                    <button>Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
