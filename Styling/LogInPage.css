@@ -128,72 +128,64 @@ header {
     animation-fill-mode: forwards;
 }
 
-/*Styling Information Grid*/
-.Information {
-    display: grid;
-    grid-template-columns: 0.33fr 1.53fr 1.33fr;
-    grid-template-rows: 200px 200px;
-    background-color: #67d686;
+/*Styling Forms*/
+.forms {
+    position: relative;
+    inset-inline-start: 24%;
 
-    column-gap: 10px;
-    row-gap: 10px;
-    border: 3px solid #67d686;
-    border-radius: 10px;
-}
-
-.Information > div:nth-child(3) {
-    grid-column: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-.Information > div:nth-child(3n+2) {
-    border: 5px solid white;
-    border-radius: 10px;
-}
-
-.Information div {
-    border: 3px solid aqua;
-}
-
-/*Flex Display inside grid*/
-#Nested-Info {
     display: flex;
-    flex-direction: column;
-}
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    width: 50%;
+    height: 100%;
 
-#Nested-Info div:nth-child(1) {
-    flex-basis: 30px;
-    background-color: white;
-}
-
-#Nested-Info div p {
-    margin: 0px;
-    text-align: left;
-}
-
-#Nested-Info div:nth-child(2) {
-    background-color: white;
-    flex-grow: 2;
-}
-
-/*Styling Information Grid Headers*/
-#Nested-Info h1 {
-    text-align: left;
-    margin: 0px;
-
-    font-size: 32px;
-
+    background-color: lightgray;
+    border: 4px solid white;
+    border-radius: 25px;
     overflow: hidden;
-    text-overflow: none;
-    white-space: nowrap;
+
+    float: left;
 }
-/*Styling paragraphs for Information*/
-#Nested-Info #FirstP {
+.form div:nth-child(2) {
+    margin-top: 10px;
+}
+
+.forms .innerform {
     position: relative;
 
-    opacity: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 
+    border: 2px solid red;
+}
+.forms .innerform h3 {
+    text-align: center;
+    border: 2px solid aqua;
+}
+.innerform form {
+    position: relative;
+
+    padding: 5%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    border: 2px solid purple;
+}
+.innerform form div {
+    padding: 3%;
+}
+.innerform form input {
+    border: 4px solid white;
+    border-radius: 4px;
+
+    font-size: 20px;
+
+    width: 100%;
+    height: 100%;
 }
 
 /*Styling for Error Handlers */
@@ -204,6 +196,20 @@ header {
 .form-success {
     color:green;
     text-align: center;
+}
+
+/*Styling for login status*/
+.login_status {
+    position: absolute;
+    inset-inline-start: 1%;
+    inset-block-start: 10%;
+
+    padding: 4px;
+    border: 3px solid darkgreen;
+    border-radius: 4px;
+    background-color: seagreen;
+
+    z-index: 999;
 }
 
 
