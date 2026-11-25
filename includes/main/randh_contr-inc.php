@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 function fullRandomizer(object $pdo, $tableName1, $tableName2, $tableName3, $returnPage) {
-    try {  
-        
+    
+try {  
         //Main
         if (!isset($_SESSION['stored_rand_data']) || $_SERVER["REQUEST_METHOD"] === "POST") {
             $results = randomizeCourse($pdo, $tableName1);
@@ -62,6 +62,7 @@ function fullRandomizer(object $pdo, $tableName1, $tableName2, $tableName3, $ret
         //Closing the connection
         $pdo = null;
         $statement = null;
+
 
     } catch (PDOException $e) {
         die("Query FAILED: " . $e->getMessage());
