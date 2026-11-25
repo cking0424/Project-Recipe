@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 
 
-function get_id(string $food_name, string $course) {
-    require_once "../dbh-inc.php";
+function get_id(object $pdo, string $food_name, string $course) {
     require_once '../config.php';
 
     switch ($course) {
@@ -17,6 +16,9 @@ function get_id(string $food_name, string $course) {
                 $stmt->execute();
 
                 $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                $pdo = null;
+                $stmt = null;
                 return $results;
             break;
         case 'side':
@@ -27,6 +29,9 @@ function get_id(string $food_name, string $course) {
                 $stmt->execute();
 
                 $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                $pdo = null;
+                $stmt = null;
                 return $results;
             break;
         case 'drink':
@@ -37,6 +42,9 @@ function get_id(string $food_name, string $course) {
                 $stmt->execute();
 
                 $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                $pdo = null;
+                $stmt = null;
                 return $results;
             break;
         default:
@@ -44,4 +52,30 @@ function get_id(string $food_name, string $course) {
                 die();
             break;
     }
+
+}
+
+function get_favorite(object $pdo, int $dish_id, string $tableName) {
+    $query = "SELECT dish_id FROM favorites WHERE dish_id = :dish_id AND courseType = :tableName;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":dish_id", $dish_id);
+    $stmt->bindParam(":tableName", $tableName);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function get_favorite_ids(object $pdo) {
+    $query = "SELECT dish_id FROM favorites";
+}
+
+function set_user_favorite(object $pdo, array $infoPacket) {
+            $query = "INSERT INTO favorites (username, dish_id, courseType, user_id) VALUES (:username, :dish_id, :courseType, :user_id);";
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(":username", $infoPacket["username"]);
+            $stmt->bindParam(":dish_id", $infoPacket["dish_id"]);
+            $stmt->bindParam(":courseType", $infoPacket["courseType"]);
+            $stmt->bindParam(":user_id", $infoPacket["user_id"]);
+            $stmt->execute();
 }
