@@ -3,8 +3,9 @@
     require_once '../includes/dbh-inc.php';
     require_once '../includes/main/randh_model-inc.php';
     require_once '../includes/main/randh_contr-inc.php';
-
-    //WHEN USING THIS FUNCTION, PARAMETERS ARE ($pdo, YOUR_MAIN_COURSE_TABLE_NAME, YOUR_SIDE_COURSE_TABLE_NAME, YOUR_DRINK_COURSE_TABLE_NAME, WEBPAGE_YOU_RETURN_TO )
+    require_once '../includes/login/login_view-inc.php';
+    require_once '../includes/main/fav_view-inc.php';
+    
     fullRandomizer($pdo, "max_main", "max_side", "max_drink", "vietnameseFood.php");
 
     $mainCourse = htmlspecialchars($_SESSION['stored_rand_data']['mainCourse']);
@@ -31,6 +32,7 @@
 </head>
 
 <body>
+    <?php output_username() ?>
     <header>
 
         <div class="TopNav">
@@ -118,10 +120,9 @@
         </div>
     </div>
 
-    <h1 id="HeaderSelect">Recently Selected</h1>
+    <h1 id="HeaderSelect">Favorites</h1>
 
     <div class="results">
-
     </div>
 
 </body>
