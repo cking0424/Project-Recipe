@@ -1,11 +1,13 @@
 <?php
 require_once '../includes/config.php';
+require_once '../includes/login/login_view-inc.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<link href="../Styling/website.CSS" rel="Stylesheet">
+<link href="../Styling/website.css" rel="Stylesheet">
 <body>
+    <?php output_username() ?>
     <header>
 
         <div class="TopNav">
