@@ -1,71 +1,22 @@
 <?php 
     require_once '../includes/config.php';
+    require_once '../includes/dbh-inc.php';
+    require_once '../includes/main/randh_model-inc.php';
+    require_once '../includes/main/randh_contr-inc.php';
+    
+    fullRandomizer($pdo, "max_main", "max_side", "max_drink", "vietnameseFood.php");
 
+    $mainCourse = htmlspecialchars($_SESSION['stored_rand_data']['mainCourse']);
+    $mainDesc = htmlspecialchars($_SESSION['stored_rand_data']['mainDesc']);
+    $mainLink = htmlspecialchars($_SESSION['stored_rand_data']['mainLink']);
 
-    try {  
-        require_once '../includes/dbh-inc.php';
-        require_once '../includes/randh-inc.php';
-        //Main
-        
-        if (!isset($_SESSION['stored_rand_data']) || $_SERVER["REQUEST_METHOD"] === "POST") {
-            $results = randomizeCourse($pdo, "max_main");
+    $side = htmlspecialchars($_SESSION['stored_rand_data']['side']);
+    $sideDesc = htmlspecialchars($_SESSION['stored_rand_data']['sideDesc']);
+    $sideLink = htmlspecialchars($_SESSION['stored_rand_data']['sideLink']);
 
-            $mainCourse = htmlspecialchars($results["food_name"]);
-            $mainDesc = htmlspecialchars($results["description"]);
-            $mainLink = htmlspecialchars($results["link"]);
-
-            $results = randomizeCourse($pdo, "max_side");
-
-            $side = htmlspecialchars($results["food_name"]);
-            $sideDesc = htmlspecialchars($results["description"]);
-            $sideLink = htmlspecialchars($results["link"]);
-
-            $results = randomizeCourse($pdo, "max_drink");
-
-            $drink = htmlspecialchars($results["food_name"]);
-            $drinkDesc = htmlspecialchars($results["description"]);
-            $drinkLink = htmlspecialchars($results["link"]);
-
-            $stored_rand_data = [
-                'mainCourse' => $mainCourse,
-                'mainDesc' => $mainDesc,
-                'mainLink' => $mainLink,
-
-                'side' => $side,
-                'sideDesc' => $sideDesc,
-                'sideLink' => $sideLink,
-
-                'drink' => $drink,
-                'drinkDesc' => $drinkDesc,
-                'drinkLink' => $drinkLink
-        ];
-
-        $_SESSION['stored_rand_data'] = $stored_rand_data;
-
-        header("Location: vietnameseFood.php");
-
-        } else {
-            $mainCourse = $_SESSION['stored_rand_data']['mainCourse'];
-            $mainDesc = $_SESSION['stored_rand_data']['mainDesc'];
-            $mainLink = $_SESSION['stored_rand_data']['mainLink'];
-
-            $side = $_SESSION['stored_rand_data']['side'];
-            $sideDesc = $_SESSION['stored_rand_data']['sideDesc'];
-            $sideLink = $_SESSION['stored_rand_data']['sideLink'];
-
-            $drink = $_SESSION['stored_rand_data']['drink'];
-            $drinkDesc = $_SESSION['stored_rand_data']['drinkDesc'];
-            $drinkLink = $_SESSION['stored_rand_data']['drinkLink'];
-        }
-
-        
-        //Closing the connection
-        $pdo = null;
-        $statement = null;
-
-    } catch (PDOException $e) {
-        die("Query FAILED: " . $e->getMessage());
-    }
+    $drink = htmlspecialchars($_SESSION['stored_rand_data']['drink']);
+    $drinkDesc = htmlspecialchars($_SESSION['stored_rand_data']['drinkDesc']);
+    $drinkLink = htmlspecialchars($_SESSION['stored_rand_data']['drinkLink']);
 
 ?>
 
@@ -112,6 +63,11 @@
             <div class="Image">
                 <img id="Image" src="../Images/yummyfood.png" alt="Vietnamese Food" style="width: 100%;">
             </div>
+
+            <form class="Favorite" action="../includes/main/fav-inc.php" method="post">
+                    <input type="hidden" name="fav" value="main">
+                    <button id="Favorite">Favorite</button><br>
+            </form>
             
             <div class="container">
                 <h4><b><?= $mainCourse?></b></h4>
@@ -125,17 +81,27 @@
                 <img id="Image" src="../Images/yummyfood.png" alt="Vietnamese Food" style="width: 100%;">
             </div>
 
+            <form class="Favorite" action="../includes/main/fav-inc.php" method="post">
+                    <input type="hidden" name="fav" value="side">
+                    <button id="Favorite">Favorite</button><br>
+            </form>
+
             <div class="container">
                 <h4><b><?= $side?></b></h4>
                 <p><?= $sideDesc?></p>
                 <a href="<?= $sideLink ?>">Link</a>
             </div>
         </div>
-
+        
         <div class="card">
             <div class="Image">
                 <img id="Image" src="../Images/yummyfood.png" alt="Vietnamese Food" style="width: 100%">
             </div>
+
+            <form class="Favorite" action="../includes/main/fav-inc.php" method="post">
+                    <input type="hidden" name="fav" value="drink">
+                    <button id="Favorite" name="Favorite_Side" value="Side">Favorite</button><br>
+            </form>
 
             <div class="container">
                 <h4><b><?= $drink?></b></h4>
