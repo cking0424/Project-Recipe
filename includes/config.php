@@ -17,7 +17,7 @@ if (!isset($_SESSION['last_regeneration'])) {
 
     regenerate_session_id();
 } else {
-    $interval = 60 * 60 * 24;
+    $interval = 60 * 30;
 
     if (time() - $_SESSION['last_regeneration'] >= $interval) {
         
