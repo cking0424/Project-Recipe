@@ -1,8 +1,9 @@
 <?php
 
 $dsn = "mysql:host=localhost;dbname=myfirstdatabase";
-$dbusername = "ADMIN";
-$dbpassword = "I-Am-The-Admin";
+//Deafult log-in for XAMPP localhost/phpmyadmin
+$dbusername = "root";
+$dbpassword = "";
 
 try {
     $pdo = new PDO($dsn, $dbusername, $dbpassword);
