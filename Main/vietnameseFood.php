@@ -4,7 +4,6 @@
     require_once '../includes/main/randh_model-inc.php';
     require_once '../includes/main/randh_contr-inc.php';
     require_once '../includes/login/login_view-inc.php';
-    require_once '../includes/main/fav_view-inc.php';
     
     fullRandomizer($pdo, "max_main", "max_side", "max_drink", "vietnameseFood.php");
 
