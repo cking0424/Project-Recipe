@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         create_user($pdo, $username, $pwd, $email);
+        unset($_SESSION['signup_data']);
 
         header("Location: ../../Main/Signup.php?signup=success");
 
