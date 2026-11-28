@@ -1,10 +1,41 @@
+
 /*Website General Formatting*/
+body{
+    background-color: #ffe4c4;
+}
 h1{
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-body{
-    background-color: #ffe4c4;
+p{
+    text-align: center;
+}
+form{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.tab{
+    text-align: center;
+}
+.box{
+   width:450px;
+   height:45px;
+   border-radius:15px;
+}
+.image{
+    text-align: center;
+    height:50px;
+    width:50px;
+}
+
+/*Header*/
+header {
+    background-color: seagreen;
+}
+
+#Slogan {
+    position: relative;
+    inset-block: 20px;
 }
 
 /*Top Nav Styling*/
@@ -86,7 +117,7 @@ body{
     padding: 100% 20.5%;
 }
 .TopNav #Sydney {
-    padding: 100% 24%
+    padding: 100% 24%;
 }
 .TopNav #Sign {
     padding: 100% 15%;
@@ -98,240 +129,72 @@ body{
     animation-fill-mode: forwards;
 }
 
-/*Animation for Buttons*/
-@keyframes colorFade {
-    0% {background-color: seagreen; color: black;}
-    100% {background-color: green; color: white;}
-}
-
-/*END OF TOP NAV STYLING*/
-
-/*Card Container Styling*/
-
-.CardContainer {
+/*Styling Information Grid*/
+.Information {
     display: grid;
-    justify-content: center;
+    grid-template-columns: 0.33fr 1.53fr 1.33fr;
+    grid-template-rows: 200px 200px;
+    background-color: #67d686;
 
-    grid-template-columns: 0.20fr 0.20fr 0.20fr 0.20fr 0.20fr;
-    grid-template-rows: 100px 100px 100px;
     column-gap: 10px;
     row-gap: 10px;
-
-    border: 3px solid transparent;
-
-    overflow: hidden;
+    border: 3px solid #67d686;
+    border-radius: 10px;
 }
 
-.CardContainer > div {
-    border: 4px solid seagreen;
-}
-
-.CardContainer > div:nth-child(1) {
+.Information > div:nth-child(3) {
+    grid-column: 3;
     grid-row-start: 1;
-    grid-row-end: 4;
-
-    grid-column-start: 2;
-}
-.CardContainer > div:nth-child(2) {
-    grid-row-start: 1;
-    grid-row-end: 4;
-    
-    grid-column-start: 3;
-}
-.CardContainer > div:nth-child(3) {
-    grid-row-start: 1;
-    grid-row-end: 4;
-
-    grid-column-start: 4;
-}
-.CardContainer > div:nth-child(4) {
-    grid-row-start: 4;
-    grid-row-end: 5;
-
-    grid-column-start: 3;
-    grid-column-end: 4;
-
-    border: 0px transparent;
+    grid-row-end: 3;
 }
 
-.Image {
-    display: flex;
-    justify-content: center;
+.Information > div:nth-child(3n+2) {
+    border: 5px solid white;
+    border-radius: 10px;
 }
 
-.CardContainer .randomizer {
-    position: relative;
-
-    inset-inline-start: 21%;
+.Information div {
+    border: 3px solid aqua;
 }
 
-.card {
-    border: 4px solid pink;
-    border-radius: 3px;
-
-}
-
-/*Styling Flex inside of grid*/
-.CardContainer > div {
+/*Flex Display inside grid*/
+#Nested-Info {
     display: flex;
     flex-direction: column;
-
-    max-height: 300px;
 }
 
-.container {
-    background-color: lightcyan;
-    z-index: 100;
-
-    max-height: 100px;
-}
-.container h4 {
-    background-color: seagreen;
-    padding: 6px;
-    position: relative;
-    inset-block-start: -20%;
-}
-.container p {
-    position: relative;
-    inset-block-start: -42.5%;
-
-    max-height: 70%;
-    overflow: scroll;
-
-    margin-left: 1%;
-}
-.container a {
-    position: absolute;
-    inset-block-start: 11.5%;
-
-    margin-left: -0.15%;
-
-    border: 2px solid green;
-    border-radius: 3px;
-
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    background-color: seagreen;
-}
-.container a:hover {
-    animation-name: colorFade;
-    animation-duration: 0.25s;
-    animation-fill-mode: forwards;
+#Nested-Info div:nth-child(1) {
+    flex-basis: 30px;
+    background-color: white;
 }
 
-#Image {
-    max-width: 300px;
-    position: absolute;
+#Nested-Info div p {
+    margin: 0px;
+    text-align: left;
 }
 
-.CardContainer > div > div:nth-child(1) {
+#Nested-Info div:nth-child(2) {
+    background-color: white;
     flex-grow: 2;
 }
 
-/*Results Styling*/
-#HeaderSelect {
-    position: relative;
-    inset-inline-start: -17px;
+/*Styling Information Grid Headers*/
+#Nested-Info h1 {
+    text-align: left;
+    margin: 0px;
 
-    text-align: center;
+    font-size: 32px;
+
+    overflow: hidden;
+    text-overflow: none;
+    white-space: nowrap;
 }
-
-/*Styling Favorites*/
-.results {
-    display: flex;
-    flex-direction: row;
-    margin-left: 10%;
-    margin-right: 10%;
-
-    flex-wrap: wrap;
-    overflow: scroll;
-
-    min-height: 125px;
-    max-height: 250px;
-
-    border: 6px solid lightgray;
-    border-radius: 25px;
-
-    background-color: darkgray;
-}
-
-.results > div {
-    border: 2px solid green;
-    background-color: seagreen;
-    flex-basis: 24.6%;
-    min-width: 24.6%;
-}
-
-.results .container p {
+/*Styling paragraphs for Information*/
+#Nested-Info #FirstP {
     position: relative;
 
-    inset-block-start: -22px;
-    max-height: 69px;
+    opacity: 100%;
 
-    overflow: scroll;
-
-    margin-left: 1%;
-}
-
-.results a {
-    position: relative;
-    inset-block-start: -10px;
-}
-
-/*Styling Randomizer buttons*/
-#Randomizer, #Resetter {
-    background-color: green;
-    color: white;
-    padding: 16px 32px;
-    margin: 4px;
-
-    border: none;
-    border-radius: 3px;
-
-    text-align: center;
-
-    cursor: pointer;
-}
-#Favorite {
-    position: relative;
-
-    inset-block-start: 103%;
-    inset-inline-start: 77%;
-
-    z-index: 500;
-
-    background-color: pink;
-    color: white;
-    padding: 4px 8px;
-    margin: 4px;
-
-    border: none;
-    border-radius: 3px;
-
-    text-align: center;
-
-    cursor: pointer;
-}
-#Remove {
-    position: relative;
-    
-    inset-block-start: -120px;
-    inset-inline-start: 77%;
-
-    z-index: 500;
-    
-    background-color: red;
-    color: white;
-    padding: 4px 8px;
-    margin: 4px;
-
-    border: none;
-    border-radius: 3px;
-
-    text-align: center;
-
-    cursor: pointer;
 }
 
 /*Styling for login status*/
@@ -348,31 +211,36 @@ body{
     z-index: 999;
 }
 
-/*Handling favorite errors*/
-.favorite-error {
-    position: absolute;
-    text-align: center;
-
-    inset-block-start: 52.5%;
-    color: red;
-
-    z-index: 999;
-}
-.favorite-success {
-    position: absolute;
-    text-align: center;
-
-    inset-inline-start: 47%;
-    inset-block-start: 52.5%;
-    color: green;
-
-    z-index: 999;
+/*Animation for Buttons*/
+@keyframes colorFade {
+    0% {background-color: seagreen; color: black;}
+    100% {background-color: green; color: white;}
 }
 
-#Randomizer:hover, #Resetter:hover {
-    background-color: seagreen;
+/*Animation for #Nested-Info Paragraphs*/
+@keyframes Slidedown {
+    0% {
+        opacity: 10%;
+    }
+
+    50% {
+        transform: translateY(70%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(70%);
+    }
 }
-#Favorite:hover {
-    background: palevioletred;
+@keyframes GradientSlide {
+    0% {
+        background-color: white;
+        opacity: 0%;
+    }
+
+    100% {
+        background-color: white;
+        opacity: 100%;
+    }
 }
 
