@@ -363,7 +363,6 @@ body{
     position: relative;
     text-align: center;
 
-    inset-block-start: 52.5%;
     color: red;
 
     z-index: 999;
@@ -372,8 +371,6 @@ body{
     position: relative;
     text-align: center;
 
-    inset-inline-start: 47%;
-    inset-block-start: 52.5%;
     color: green;
 
     z-index: 999;
