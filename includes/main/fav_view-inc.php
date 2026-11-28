@@ -32,34 +32,6 @@ function render_favorites(object $pdo) {
 
 }
 
-function render_fav_table(object $pdo) {
-
-    $length = count($_SESSION['user_favorites']);
-    
-
-    for ($i = 0; $i < $length; $i++) {
-        echo '<br>';
-        echo 'loop: ' . $i;
-        echo '<br>';
-
-        echo $dish_id = $_SESSION['user_favorites'][$i]['dish_id'];
-        echo $tableName = $_SESSION['user_favorites'][$i]['courseType'];
-
-        echo gettype($dish_id);
-        echo gettype($tableName);
-
-        $result = get_favorite_dish($pdo, $dish_id, $tableName);
-        
-        echo $result['food_name'];
-        echo '<br>';
-        echo "Success";
-
-
-    }
-
-    
-}
-
 function check_favorite_errors() {
     if (isset($_SESSION["errors_favorite"])) {
         $errors = $_SESSION["errors_favorite"];
