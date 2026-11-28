@@ -360,7 +360,7 @@ body{
 
 /*Handling favorite errors*/
 .favorite-error {
-    position: absolute;
+    position: relative;
     text-align: center;
 
     inset-block-start: 52.5%;
@@ -369,7 +369,7 @@ body{
     z-index: 999;
 }
 .favorite-success {
-    position: absolute;
+    position: relative;
     text-align: center;
 
     inset-inline-start: 47%;
