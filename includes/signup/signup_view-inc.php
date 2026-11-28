@@ -14,7 +14,7 @@ function check_signup_errors() {
 
         unset($_SESSION['errors_signup']);
     } else if (isset($_GET["signup"]) && $_GET["signup"] === "success") {
-        echo '<p class="form-success"> Signup success!</p>';
+        echo '<p class="form-success">Signup success!</p>';
     }
 }
 
@@ -22,18 +22,28 @@ function check_signup_data() {
     
     
     if (isset($_SESSION["signup_data"]["username"]) && !isset($_SESSION["errors_signup"]["username_taken"])) {
+        echo '<div>';
         echo '<input type="text" name="username" placeholder="Username" value="'.$_SESSION["signup_data"]["username"].'">';
+        echo '</div>';
         
     } else {
+        echo '<div>';
         echo '<input type="text" name="username" placeholder="Username">';
+        echo '</div>';
     }
-
+    
+    echo '<div>';
     echo '<input type="password" name="pwd" placeholder="Password">';
+    echo '</div>';
 
     if (isset($_SESSION["signup_data"]["email"]) && !isset($_SESSION["errors_signup"]["email_used"]) && !isset($_SESSION["errors_signup"]["invalid_email"])) {
+        echo '<div>';
         echo '<input type="text" name="email" placeholder="E-Mail" value="'.$_SESSION["signup_data"]["email"].'">';
+        echo '</div>';
         
     } else {
-         echo '<input type="text" name="email" placeholder="E-Mail">';
+        echo '<div>';
+        echo '<input type="text" name="email" placeholder="E-Mail">';
+        echo '</div>';
     }
 }
