@@ -31,6 +31,7 @@ if (isset($_SESSION['user_id'])) {
 
     }
 }
+}
 
 function check_favorite_errors() {
     if (isset($_SESSION["errors_favorite"])) {
