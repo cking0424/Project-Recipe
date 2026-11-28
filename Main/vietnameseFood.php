@@ -13,14 +13,17 @@
     $mainCourse = htmlspecialchars($_SESSION['stored_rand_data']['mainCourse']);
     $mainDesc = htmlspecialchars($_SESSION['stored_rand_data']['mainDesc']);
     $mainLink = htmlspecialchars($_SESSION['stored_rand_data']['mainLink']);
+    $mainPic = htmlspecialchars($_SESSION['stored_rand_data']['mainPic']);
 
     $side = htmlspecialchars($_SESSION['stored_rand_data']['side']);
     $sideDesc = htmlspecialchars($_SESSION['stored_rand_data']['sideDesc']);
     $sideLink = htmlspecialchars($_SESSION['stored_rand_data']['sideLink']);
+    $sidePic = htmlspecialchars($_SESSION['stored_rand_data']['sidePic']);
 
     $drink = htmlspecialchars($_SESSION['stored_rand_data']['drink']);
     $drinkDesc = htmlspecialchars($_SESSION['stored_rand_data']['drinkDesc']);
     $drinkLink = htmlspecialchars($_SESSION['stored_rand_data']['drinkLink']);
+    $drinkPic = htmlspecialchars($_SESSION['stored_rand_data']['drinkPic']);
 
     if (isset($_SESSION['user_id'])) {
         $user_id = $_SESSION['user_id'];
@@ -71,7 +74,7 @@
     <div class="CardContainer">
         <div class="card">
             <div class="Image">
-                <img id="Image" src="../Images/yummyfood.png" alt="Vietnamese Food" style="width: 100%;">
+                <img id="Image" src="<?= $mainPic?>" alt="Vietnamese Main" style="width: 100%;">
             </div>
 
             <form class="Favorite" action="../includes/main/fav-inc.php" method="post">
@@ -88,7 +91,7 @@
 
         <div class="card">
             <div class="Image">
-                <img id="Image" src="../Images/yummyfood.png" alt="Vietnamese Food" style="width: 100%;">
+                <img id="Image" src="<?= $sidePic?>" alt="Vietnamese Side" style="width: 100%;">
             </div>
 
             <form class="Favorite" action="../includes/main/fav-inc.php" method="post">
@@ -105,7 +108,7 @@
         
         <div class="card">
             <div class="Image">
-                <img id="Image" src="../Images/yummyfood.png" alt="Vietnamese Food" style="width: 100%">
+                <img id="Image" src="<?= $drinkPic?>" alt="Vietnamese Drink" style="width: 100%">
             </div>
 
             <form class="Favorite" action="../includes/main/fav-inc.php" method="post">
