@@ -12,21 +12,21 @@ try {
             $mainCourse = htmlspecialchars($results["food_name"]);
             $mainDesc = htmlspecialchars($results["description"]);
             $mainLink = htmlspecialchars($results["link"]);
-            $mainPic = htmlspecialchars($results["allergies"]);
+            $mainPic = htmlspecialchars($results["image"]);
 
             $results = randomizeCourse($pdo, $tableName2);
 
             $side = htmlspecialchars($results["food_name"]);
             $sideDesc = htmlspecialchars($results["description"]);
             $sideLink = htmlspecialchars($results["link"]);
-            $sidePic = htmlspecialchars($results["allergies"]);
+            $sidePic = htmlspecialchars($results["image"]);
 
             $results = randomizeCourse($pdo, $tableName3);
 
             $drink = htmlspecialchars($results["food_name"]);
             $drinkDesc = htmlspecialchars($results["description"]);
             $drinkLink = htmlspecialchars($results["link"]);
-            $drinkPic = htmlspecialchars($results["allergies"]);
+            $drinkPic = htmlspecialchars($results["image"]);
 
             $stored_rand_data = [
                 'mainTable' => $tableName1,
@@ -56,14 +56,17 @@ try {
             $mainCourse = $_SESSION['stored_rand_data']['mainCourse'];
             $mainDesc = $_SESSION['stored_rand_data']['mainDesc'];
             $mainLink = $_SESSION['stored_rand_data']['mainLink'];
+            $mainLink = $_SESSION['stored_rand_data']['mainPic'];
 
             $side = $_SESSION['stored_rand_data']['side'];
             $sideDesc = $_SESSION['stored_rand_data']['sideDesc'];
             $sideLink = $_SESSION['stored_rand_data']['sideLink'];
+            $sideLink = $_SESSION['stored_rand_data']['mainPic'];
 
             $drink = $_SESSION['stored_rand_data']['drink'];
             $drinkDesc = $_SESSION['stored_rand_data']['drinkDesc'];
             $drinkLink = $_SESSION['stored_rand_data']['drinkLink'];
+            $drinkLink = $_SESSION['stored_rand_data']['mainPic'];
         }
         //Closing the connection
         $pdo = null;
