@@ -13,7 +13,8 @@ A simple website with curated recipes from select regions from across the world.
 * Download XAMPP
 * Download the repository as a .zip file and unzip the file inside `htdocs` in the XAMPP file directory
 * Launch the XAMPP server manager and run `mySQL database` and `Apache web server`
-* Access `http://localhost/phpmyadmin/` on a web browser and import `myfirstdatabase.sql` included in the zip
+* Access `http://localhost/phpmyadmin/` on a web browser
+* Create a new database named `myfirstdatabase` then navigate to the import tab, from there import `myfirstdatabase.sql`
 * Access `http://localhost/FoodRandomizer/Main/Website%20Recipe%20Transcriber.php` in order to access the website
 
 ## AI USAGE
