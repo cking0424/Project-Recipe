@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 function render_favorites(object $pdo) {
 
+if (isset($_SESSION['user_id'])) {
     $length = count($_SESSION['user_favorites']);
     
 
@@ -29,7 +30,6 @@ function render_favorites(object $pdo) {
 
 
     }
-
 }
 
 function check_favorite_errors() {
