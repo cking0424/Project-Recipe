@@ -112,12 +112,19 @@ body{
     display: grid;
     justify-content: center;
 
+    min-width: 1600px;
+
     grid-template-columns: 0.20fr 0.20fr 0.20fr 0.20fr 0.20fr;
     grid-template-rows: 100px 100px 100px;
     column-gap: 10px;
     row-gap: 10px;
 
-    border: 3px solid transparent;
+    padding-top: 10px;
+
+    border: 10px solid green;
+    border-radius: 30px;
+
+    background-color: lightgreen;
 
     overflow: hidden;
 }
@@ -202,7 +209,7 @@ body{
 }
 .container a {
     position: absolute;
-    inset-block-start: 11.5%;
+    inset-block-start: 13.5%;
 
     margin-left: -0.15%;
 
@@ -250,6 +257,8 @@ body{
     min-height: 125px;
     max-height: 250px;
 
+    min-width: 1000px;
+
     border: 6px solid lightgray;
     border-radius: 25px;
 
@@ -261,6 +270,7 @@ body{
     background-color: seagreen;
     flex-basis: 24.6%;
     min-width: 24.6%;
+
 }
 
 .results .container p {
@@ -313,11 +323,11 @@ body{
 
     cursor: pointer;
 }
-#Remove {
+.container #Remove {
     position: relative;
     
     inset-block-start: -87px;
-    inset-inline-start: 77%;
+    inset-inline-start: 70%;
 
     z-index: 500;
     
