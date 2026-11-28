@@ -2,9 +2,9 @@
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $favorite = $_POST["fav"];
     
     try {
+        $favorite = $_POST["fav"];
 
         require_once '../dbh-inc.php';
         require_once '../config.php';
@@ -19,13 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (!isset($_SESSION["user_id"])) {
             $errors["not_logged_in"] = "Not logged in! Please log in and try again.";
         } 
+        if (isset($_SESSION['user_id'])) {
+            $dish_id = $course['id'];
+            $user_id = $_SESSION['user_id'];
+            $tableName = $course['table'];
 
-        $dish_id = $course['id'];
-        $tableName = $course['table'];
-
-        if (is_already_favorite($pdo, $dish_id, $tableName)) {
+            if (is_already_favorite($pdo, $dish_id, $user_id, $tableName)) {
             $errors["already_favorited"] = "You have already favorited this dish!";
+            }
         }
+        
 
         if ($errors) {
             $_SESSION['errors_favorite'] = $errors;
