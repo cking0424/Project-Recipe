@@ -17,13 +17,13 @@ function render_favorites(object $pdo) {
         echo '<div>
             <div class="container">
                 <h4><b>' . $result['food_name'] . '</b></h4>
-                <p>' . $result['description'] . '</p>
                 <a href="' . $result['link'] . '">Link</a>
 
                 <form class="Remove" action="../includes/main/rem-inc.php" method="post">
                     <input type="hidden" name="rem" value="' . $result['id'] . '">
                     <button id="Remove" name="Remove_Item" value="' . $tableName . '">Remove</button><br>
                 </form>
+                <p>' . $result['description'] . '</p>
             </div>
         </div>';
 
@@ -72,7 +72,6 @@ function check_favorite_errors() {
 
         unset($_SESSION['errors_favorite']);
     } else if (isset($_GET["favorite"]) && $_GET["favorite"] === "success") {
-        echo "<br>";
-        echo '<p class="form-success">Favorited!</p>';
+        echo '<p class="favorite-success">Favorited!</p>';
     }
 }
