@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function get_min_max_id(object $pdo, $tableName) {
+function get_min_max_id(object $pdo, string $tableName) {
     $query = "SELECT MIN(id) AS low_ID, MAX(id) AS high_ID FROM $tableName;";
     $foodID = $pdo->prepare($query);
     $foodID->execute();
@@ -11,11 +11,11 @@ function get_min_max_id(object $pdo, $tableName) {
     return $result;
 }
 
-function randomizeCourse(object $pdo, $tableName) {
+function randomizeCourse(object $pdo, string $tableName) {
     $foodID = get_min_max_id($pdo, $tableName);
     $randID = rand($foodID["low_ID"], $foodID["high_ID"]);
 
-    $query = "SELECT food_name, description, link FROM $tableName WHERE id = :randID;";
+    $query = "SELECT * FROM $tableName WHERE id = :randID;";
 
     //Preparing user info
     $statement = $pdo->prepare($query);
