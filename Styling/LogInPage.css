@@ -146,6 +146,8 @@ header {
     border-radius: 25px;
     overflow: hidden;
 
+    padding-bottom: 1%;
+
     float: left;
 }
 .form div:nth-child(2) {
@@ -159,21 +161,24 @@ header {
     flex-flow: column nowrap;
     justify-content: center;
 
-    border: 2px solid red;
+    width: 50%;
+
+
 }
 .forms .innerform h3 {
     text-align: center;
-    border: 2px solid aqua;
+
+
+    font-size: 30px;
 }
 .innerform form {
     position: relative;
 
-    padding: 5%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
 
-    border: 2px solid purple;
+
 }
 .innerform form div {
     padding: 3%;
@@ -186,6 +191,20 @@ header {
 
     width: 100%;
     height: 100%;
+}
+
+/*Buttons*/
+form button {
+    border: 3px solid green;
+    border-radius: 4px;
+    
+    background-color: seagreen;
+    font-size: 20px;
+}
+form button:hover {
+    animation-name: colorFade;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
 }
 
 /*Styling for Error Handlers */
