@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function fullRandomizer(object $pdo, $tableName1, $tableName2, $tableName3, $returnPage) {
+function fullRandomizer(object $pdo, string $tableName1, string $tableName2, string $tableName3, string $returnPage) {
     
 try {  
         //Main
@@ -12,34 +12,40 @@ try {
             $mainCourse = htmlspecialchars($results["food_name"]);
             $mainDesc = htmlspecialchars($results["description"]);
             $mainLink = htmlspecialchars($results["link"]);
+            $mainPic = htmlspecialchars($results["allergies"]);
 
             $results = randomizeCourse($pdo, $tableName2);
 
             $side = htmlspecialchars($results["food_name"]);
             $sideDesc = htmlspecialchars($results["description"]);
             $sideLink = htmlspecialchars($results["link"]);
+            $sidePic = htmlspecialchars($results["allergies"]);
 
             $results = randomizeCourse($pdo, $tableName3);
 
             $drink = htmlspecialchars($results["food_name"]);
             $drinkDesc = htmlspecialchars($results["description"]);
             $drinkLink = htmlspecialchars($results["link"]);
+            $drinkPic = htmlspecialchars($results["allergies"]);
 
             $stored_rand_data = [
                 'mainTable' => $tableName1,
                 'mainCourse' => $mainCourse,
                 'mainDesc' => $mainDesc,
                 'mainLink' => $mainLink,
+                'mainPic' => $mainPic,
 
                 'sideTable' => $tableName2,
                 'side' => $side,
                 'sideDesc' => $sideDesc,
                 'sideLink' => $sideLink,
+                'sidePic' => $sidePic,
 
                 'drinkTable' => $tableName3,
                 'drink' => $drink,
                 'drinkDesc' => $drinkDesc,
-                'drinkLink' => $drinkLink
+                'drinkLink' => $drinkLink,
+                'drinkPic' => $drinkPic
         ];
 
         $_SESSION['stored_rand_data'] = $stored_rand_data;
