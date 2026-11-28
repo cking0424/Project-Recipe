@@ -1,11 +1,20 @@
 # Project Recipe
 
-A simple tool that takes YouTube or TikTok video links and automatically transcribes them into easy-to-read, formatted text recipes. Stop pausing and rewinding cooking videos!
+A simple website with curated recipes from select regions from across the world. If you've ever had trouble choosing what to eat for dinner worry no longer because our website was designed for people who struggle with this very issue. Simply choose from the tabs at the top which cuisine you'd like to indulge in and click the randomize button to get a 3 course meal of a main, a side, and a drink.
 
 ## Features
-* **Link Parsing:** Works with standard YouTube and TikTok URLs.
-* **Auto-Transcription:** Converts the video's speech/captions into text.
-* **Recipe Formatting:** Automatically separates the text into an Ingredients list and Step-by-Step Instructions.
+* **SQL database:** An SQL database contains all of the dishes including the ones you've favorited.
+* **Favoriting:** If you've found a dish that speaks to you, you have the option of favoriting it.
+* **Un-Favoriting:** If a dish you thought would be good wasn't, you have the option of removing it as a favorite.
+* **Account System:** Quite rudimentary but allows for signup, login, and logout. This account is also linked to your favorites.
+* **Error Handling for User Input:** For the field where you can input information it is safely guarded against incorrect inputs, empty fields, and sql injection.
+
+## How To Run
+* Download XAMPP
+* Download the repository as a .zip file and unzip the file inside `htdocs` in the XAMPP file directory
+* Launch the XAMPP server manager and run `mySQL database` and `Apache web server`
+* Access `http://localhost/phpmyadmin/` and import `myfirstdatabase.sql` included in the zip
+* Access `http://localhost/FoodRandomizer/Main/Website%20Recipe%20Transcriber.php` in order to access the website
 
 ## AI USAGE
 **Recommended Page (HTML & CSS)**
