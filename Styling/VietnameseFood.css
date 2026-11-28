@@ -3,6 +3,9 @@ h1{
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+body{
+    background-color: #ffe4c4;
+}
 
 /*Top Nav Styling*/
 .TopNav {
@@ -114,7 +117,7 @@ h1{
     column-gap: 10px;
     row-gap: 10px;
 
-    border: 3px solid aqua;
+    border: 3px solid transparent;
 
     overflow: hidden;
 }
@@ -217,15 +220,6 @@ h1{
     animation-fill-mode: forwards;
 }
 
-#Favorite {
-    position: relative;
-
-    inset-block-start: 103%;
-    inset-inline-start: 77%;
-
-    z-index: 500;
-}
-
 #Image {
     max-width: 300px;
     position: absolute;
@@ -237,7 +231,10 @@ h1{
 
 /*Results Styling*/
 #HeaderSelect {
-    margin-left: 0%;
+    position: relative;
+    inset-inline-start: -17px;
+
+    text-align: center;
 }
 
 /*Styling Favorites*/
@@ -255,6 +252,8 @@ h1{
 
     border: 6px solid lightgray;
     border-radius: 25px;
+
+    background-color: darkgray;
 }
 
 .results > div {
@@ -277,8 +276,7 @@ h1{
 
 .results a {
     position: relative;
-    inset-block-start: -133px;
-    inset-inline-start: 280px;
+    inset-block-start: -10px;
 }
 
 /*Styling Randomizer buttons*/
@@ -296,7 +294,34 @@ h1{
     cursor: pointer;
 }
 #Favorite {
+    position: relative;
+
+    inset-block-start: 103%;
+    inset-inline-start: 77%;
+
+    z-index: 500;
+
     background-color: pink;
+    color: white;
+    padding: 4px 8px;
+    margin: 4px;
+
+    border: none;
+    border-radius: 3px;
+
+    text-align: center;
+
+    cursor: pointer;
+}
+#Remove {
+    position: relative;
+    
+    inset-block-start: -120px;
+    inset-inline-start: 77%;
+
+    z-index: 500;
+    
+    background-color: red;
     color: white;
     padding: 4px 8px;
     margin: 4px;
@@ -313,12 +338,33 @@ h1{
 .login_status {
     position: absolute;
     inset-inline-start: 1%;
-    inset-block-start: 10%;
+    inset-block-start: 92.5%;
 
     padding: 4px;
     border: 3px solid darkgreen;
     border-radius: 4px;
     background-color: seagreen;
+
+    z-index: 999;
+}
+
+/*Handling favorite errors*/
+.favorite-error {
+    position: absolute;
+    text-align: center;
+
+    inset-block-start: 52.5%;
+    color: red;
+
+    z-index: 999;
+}
+.favorite-success {
+    position: absolute;
+    text-align: center;
+
+    inset-inline-start: 47%;
+    inset-block-start: 52.5%;
+    color: green;
 
     z-index: 999;
 }
