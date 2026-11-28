@@ -4,6 +4,9 @@
     require_once '../includes/main/randh_model-inc.php';
     require_once '../includes/main/randh_contr-inc.php';
     require_once '../includes/login/login_view-inc.php';
+    require_once '../includes/main/fav_model-inc.php';
+    require_once '../includes/main/fav_contr-inc.php';
+    require_once '../includes/main/fav_view-inc.php';
     
     fullRandomizer($pdo, "max_main", "max_side", "max_drink", "vietnameseFood.php");
 
@@ -18,6 +21,11 @@
     $drink = htmlspecialchars($_SESSION['stored_rand_data']['drink']);
     $drinkDesc = htmlspecialchars($_SESSION['stored_rand_data']['drinkDesc']);
     $drinkLink = htmlspecialchars($_SESSION['stored_rand_data']['drinkLink']);
+
+    if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
+        get_user_fav_table($pdo, $user_id);
+    }
 
 ?>
 
@@ -116,12 +124,15 @@
             <form class="randomizer" action="vietnameseFood.php" method="post">
                 <button id="Randomizer">Randomize All</button><br>
             </form>
+            <br>
+            <?php check_favorite_errors(); ?>
         </div>
     </div>
 
     <h1 id="HeaderSelect">Favorites</h1>
 
     <div class="results">
+        <?php render_favorites($pdo) ?>
     </div>
 
 </body>
