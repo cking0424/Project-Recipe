@@ -221,7 +221,7 @@ form button:hover {
 .login_status {
     position: absolute;
     inset-inline-start: 1%;
-    inset-block-start: 10%;
+    inset-block-start: 92.5%;
 
     padding: 4px;
     border: 3px solid darkgreen;
