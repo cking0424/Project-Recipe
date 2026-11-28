@@ -55,19 +55,42 @@ function get_id(object $pdo, string $food_name, string $course) {
 
 }
 
-function get_favorite(object $pdo, int $dish_id, string $tableName) {
-    $query = "SELECT dish_id FROM favorites WHERE dish_id = :dish_id AND courseType = :tableName;";
+function get_favorite(object $pdo, int $dish_id, int $user_id, string $tableName) {
+    $query = "SELECT dish_id FROM favorites WHERE dish_id = :dish_id AND courseType = :tableName AND user_id = :user_id;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":dish_id", $dish_id);
     $stmt->bindParam(":tableName", $tableName);
+    $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
 
-function get_favorite_ids(object $pdo) {
-    $query = "SELECT dish_id FROM favorites";
+function get_favorite_dish(object $pdo, int $dish_id, string $tableName) {
+
+    $query = "SELECT * FROM $tableName WHERE id = :dish_id";
+
+    //Preparing user info
+    $statement = $pdo->prepare($query);
+
+    $statement->bindParam(":dish_id", $dish_id);
+
+    $statement->execute();
+
+    $results = $statement->fetch(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function get_user_favorite_db(object $pdo, int $user_id) {
+    $query = "SELECT dish_id, courseType FROM favorites WHERE user_id = :user_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $_SESSION['user_favorites'] = $result;
 }
 
 function set_user_favorite(object $pdo, array $infoPacket) {
