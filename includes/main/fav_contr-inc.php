@@ -42,10 +42,19 @@ function whichCourse(object $pdo, string $course) {
     }
 }
 
-function is_already_favorite(object $pdo, int $dish_id, string $tableName) {
-            if (get_favorite($pdo, $dish_id, $tableName)) {
+function is_already_favorite(object $pdo, int $dish_id, int $user_id, string $tableName) {
+    if (isset($_SESSION['user_id'])) {
+        if (get_favorite($pdo, $dish_id, $user_id, $tableName)) {
                 return true;
             } else {
                 return false;
             }
+    } else {
+        return true;
+    }
+            
+}
+
+function get_user_fav_table(object $pdo, int $user_id) {
+        get_user_favorite_db($pdo, $user_id);
 }
